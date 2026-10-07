@@ -1,0 +1,53 @@
+# Delphi / RAD Studio
+*.dcu
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.map
+*.tds
+*.rsm
+*.identcache
+*.dproj.local
+*.projdata
+*.res
+*.stat
+__history/
+ModelSupport_*/
+Win32/
+Win64/
+Android/
+Android64/
+OSX32/
+OSX64/
+
+# Bancos de dados e configurações locais
+*.fdb
+*.db
+*.sqlite
+*.sqlite3
+*.ini
+*.cfg
+*.conf
+.env
+.env.*
+!.env.example
+
+# Certificados, chaves e arquivos sensíveis
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+
+# Distribuição compilada local
+/CoreFiscal/
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+

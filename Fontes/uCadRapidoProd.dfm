@@ -1,0 +1,698 @@
+object fCadRapidoProd: TfCadRapidoProd
+  Left = 0
+  Top = 0
+  ClientHeight = 386
+  ClientWidth = 770
+  Caption = 'Formulario cara cadastrar e vincular produtos'
+  OnShow = UniFormShow
+  BorderStyle = bsNone
+  OldCreateOrder = False
+  BorderIcons = []
+  MonitoredKeys.Keys = <>
+  ClientEvents.UniEvents.Strings = (
+    
+      'window.beforeInit=function window.beforeInit(sender, config)'#13#10'{'#13 +
+      #10'  config.style = '#39'border: 0px; padding: 0px; border-radius: 0px' +
+      #39';'#13#10'}')
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PG: TUniPageControl
+    Left = 0
+    Top = 30
+    Width = 770
+    Height = 356
+    Hint = ''
+    ActivePage = tabOpcoes
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 80
+    ExplicitTop = 24
+    ExplicitWidth = 289
+    ExplicitHeight = 193
+    object tabOpcoes: TUniTabSheet
+      Hint = ''
+      Caption = 'Op'#231#245'es'
+      object bVincular: TUniBitBtn
+        Left = 176
+        Top = 46
+        Width = 177
+        Height = 41
+        Hint = ''
+        Caption = 'Vincular Produto'
+        ParentFont = False
+        Font.Color = clWhite
+        Font.Style = [fsBold]
+        TabOrder = 0
+        ClientEvents.ExtEvents.Strings = (
+          
+            'added=function added(sender, container, pos, eOpts)'#13#10'{'#13#10'  sender' +
+            '.addCls('#39'BotaoAzulEscuro'#39');'#13#10'}')
+        OnClick = bVincularClick
+      end
+      object bcadastrar: TUniBitBtn
+        Left = 359
+        Top = 46
+        Width = 177
+        Height = 41
+        Hint = ''
+        Caption = 'Cadastrar Produto'
+        ParentFont = False
+        Font.Color = clWhite
+        Font.Style = [fsBold]
+        TabOrder = 1
+        ClientEvents.ExtEvents.Strings = (
+          
+            'added=function added(sender, container, pos, eOpts)'#13#10'{'#13#10'  sender' +
+            '.addCls('#39'BotaoVerde'#39');'#13#10'}')
+        OnClick = bcadastrarClick
+      end
+      object bFechar: TUniBitBtn
+        Left = 263
+        Top = 93
+        Width = 177
+        Height = 41
+        Hint = ''
+        Caption = 'Fechar'
+        ParentFont = False
+        Font.Color = clWhite
+        Font.Style = [fsBold]
+        TabOrder = 2
+        ClientEvents.ExtEvents.Strings = (
+          
+            'added=function added(sender, container, pos, eOpts)'#13#10'{'#13#10'  sender' +
+            '.addCls('#39'BotaoVermelho'#39');'#13#10'}')
+        OnClick = bFecharClick
+      end
+    end
+    object TabCadastro: TUniTabSheet
+      Hint = ''
+      Caption = 'Cadastro R'#225'pido'
+      object UniLabel1: TUniLabel
+        Left = 26
+        Top = 16
+        Width = 64
+        Height = 13
+        Hint = ''
+        Caption = 'C'#243'digo / Ref.'
+        TabOrder = 0
+      end
+      object DBEdit2: TUniDBEdit
+        Left = 26
+        Top = 35
+        Width = 79
+        Height = 22
+        Hint = ''
+        CharCase = ecUpperCase
+        TabOrder = 1
+        ReadOnly = True
+      end
+      object UniLabel2: TUniLabel
+        Left = 113
+        Top = 16
+        Width = 20
+        Height = 13
+        Hint = ''
+        Caption = 'EAN'
+        TabOrder = 2
+      end
+      object UniDBEdit1: TUniDBEdit
+        Left = 113
+        Top = 35
+        Width = 108
+        Height = 22
+        Hint = ''
+        DataField = 'EAN'
+        DataSource = DsEntradaCor
+        CharCase = ecUpperCase
+        TabOrder = 3
+        ReadOnly = True
+      end
+      object UniLabel3: TUniLabel
+        Left = 227
+        Top = 16
+        Width = 46
+        Height = 13
+        Hint = ''
+        Caption = 'Descri'#231#227'o'
+        TabOrder = 4
+      end
+      object dbeNome: TUniDBEdit
+        Left = 227
+        Top = 35
+        Width = 357
+        Height = 22
+        Hint = ''
+        DataField = 'DESCRICAO'
+        DataSource = DsEntradaCor
+        CharCase = ecUpperCase
+        TabOrder = 5
+      end
+      object UniLabel4: TUniLabel
+        Left = 590
+        Top = 16
+        Width = 22
+        Height = 13
+        Hint = ''
+        Caption = 'NCM'
+        TabOrder = 6
+      end
+      object cbNCM: TUniDBLookupComboBox
+        Left = 590
+        Top = 35
+        Width = 109
+        Hint = ''
+        ListField = 'CODIGO'
+        ListSource = dsNCM
+        KeyField = 'CODIGO'
+        ListFieldIndex = 0
+        DataField = 'NCM'
+        DataSource = DsEntradaCor
+        TabOrder = 7
+        ReadOnly = True
+        Color = clWindow
+        Style = csDropDown
+      end
+      object UniLabel6: TUniLabel
+        Left = 26
+        Top = 64
+        Width = 39
+        Height = 13
+        Hint = ''
+        Caption = 'Unidade'
+        TabOrder = 8
+      end
+      object UniDBEdit3: TUniDBEdit
+        Left = 26
+        Top = 83
+        Width = 79
+        Height = 22
+        Hint = ''
+        DataField = 'UN'
+        DataSource = DsEntradaCor
+        CharCase = ecUpperCase
+        TabOrder = 9
+        ReadOnly = True
+      end
+      object UniLabel7: TUniLabel
+        Left = 117
+        Top = 64
+        Width = 25
+        Height = 13
+        Hint = ''
+        Caption = 'CEST'
+        TabOrder = 10
+      end
+      object cbCEST: TUniDBLookupComboBox
+        Left = 111
+        Top = 83
+        Width = 378
+        Hint = ''
+        ListField = 'CEST'
+        ListSource = dsCEST
+        KeyField = 'CEST'
+        ListFieldIndex = 0
+        DataField = 'CEST'
+        DataSource = DsEntradaCor
+        TabOrder = 11
+        ReadOnly = True
+        Color = clWindow
+        Style = csDropDown
+      end
+      object UniLabel8: TUniLabel
+        Left = 26
+        Top = 113
+        Width = 28
+        Height = 13
+        Hint = ''
+        Caption = 'Custo'
+        TabOrder = 12
+      end
+      object eCusto: TUniDBFormattedNumberEdit
+        Left = 25
+        Top = 132
+        Width = 109
+        Height = 22
+        Hint = ''
+        DataField = 'VLUNIT'
+        DataSource = DsEntradaCor
+        TabOrder = 13
+        ReadOnly = True
+        DecimalSeparator = ','
+        ThousandSeparator = '.'
+      end
+      object UniLabel14: TUniLabel
+        Left = 139
+        Top = 113
+        Width = 52
+        Height = 13
+        Hint = ''
+        Caption = 'Margem %'
+        TabOrder = 14
+      end
+      object eMargem: TUniDBFormattedNumberEdit
+        Left = 140
+        Top = 132
+        Width = 99
+        Height = 22
+        Hint = ''
+        DataField = 'MARGEM'
+        DataSource = DsEntradaCor
+        TabOrder = 15
+        DecimalSeparator = ','
+        ThousandSeparator = '.'
+        OnChange = eMargemChange
+      end
+      object UniLabel9: TUniLabel
+        Left = 244
+        Top = 113
+        Width = 60
+        Height = 13
+        Hint = ''
+        Caption = 'Pre'#231'o Venda'
+        TabOrder = 16
+      end
+      object evenda: TUniDBFormattedNumberEdit
+        Left = 244
+        Top = 132
+        Width = 99
+        Height = 22
+        Hint = ''
+        DataField = 'VALOR_VENDA'
+        DataSource = DsEntradaCor
+        TabOrder = 17
+        DecimalSeparator = ','
+        ThousandSeparator = '.'
+        OnChange = evendaChange
+      end
+      object btnSalva: TUniBitBtn
+        Left = 238
+        Top = 258
+        Width = 98
+        Height = 41
+        Hint = ''
+        Caption = 'Salvar'
+        ParentFont = False
+        Font.Color = clWhite
+        Font.Style = [fsBold]
+        TabOrder = 18
+        ClientEvents.ExtEvents.Strings = (
+          
+            'added=function added(sender, container, pos, eOpts)'#13#10'{'#13#10'  sender' +
+            '.addCls('#39'BotaoVerde'#39');'#13#10'}')
+        ScreenMask.Enabled = True
+        ScreenMask.WaitData = True
+        ScreenMask.Message = 'Aguarde. Salvando dados...'
+        ScreenMask.Target = Owner
+        OnClick = btnSalvaClick
+      end
+      object btnCancela: TUniBitBtn
+        Left = 342
+        Top = 258
+        Width = 98
+        Height = 41
+        Hint = ''
+        Caption = 'Cancelar'
+        ParentFont = False
+        Font.Color = clWhite
+        Font.Style = [fsBold]
+        TabOrder = 19
+        ClientEvents.ExtEvents.Strings = (
+          
+            'added=function added(sender, container, pos, eOpts)'#13#10'{'#13#10'  sender' +
+            '.addCls('#39'BotaoLaranja'#39');'#13#10'}')
+        OnClick = btnCancelaClick
+      end
+      object UniLabel11: TUniLabel
+        Left = 22
+        Top = 165
+        Width = 178
+        Height = 13
+        Hint = ''
+        Caption = 'Opera'#231#227'o de Saida Dentro do Estado'
+        TabOrder = 20
+      end
+      object cbOpSaidaDentro: TUniDBLookupComboBox
+        Left = 22
+        Top = 179
+        Width = 677
+        Hint = ''
+        ListField = 'DESCRICAO'
+        ListSource = dsTES
+        KeyField = 'ID'
+        ListFieldIndex = 0
+        DataField = 'OPER_SAIDA_DENTRO'
+        DataSource = DsEntradaCor
+        TabOrder = 21
+        Color = clWindow
+        Style = csDropDown
+      end
+      object UniLabel12: TUniLabel
+        Left = 22
+        Top = 204
+        Width = 167
+        Height = 13
+        Hint = ''
+        Caption = 'Opera'#231#227'o de Saida Fora do Estado'
+        TabOrder = 22
+      end
+      object cbOpSaidaFora: TUniDBLookupComboBox
+        Left = 22
+        Top = 221
+        Width = 677
+        Hint = ''
+        ListField = 'DESCRICAO'
+        ListSource = dsTES
+        KeyField = 'ID'
+        ListFieldIndex = 0
+        DataField = 'OPER_SAIDA_FORA'
+        DataSource = DsEntradaCor
+        TabOrder = 23
+        Color = clWindow
+        Style = csDropDown
+      end
+    end
+    object TabDados: TUniTabSheet
+      Hint = ''
+      Caption = 'Dados'
+      object UniDBGrid1: TUniDBGrid
+        Left = 0
+        Top = 43
+        Width = 762
+        Height = 285
+        Hint = ''
+        LoadMask.Message = 'Loading data...'
+        Align = alBottom
+        TabOrder = 0
+        Columns = <
+          item
+            FieldName = 'DESCRICAO'
+            Title.Caption = 'DESCRICAO'
+            Width = 243
+          end
+          item
+            FieldName = 'CUSTO_ANTIGO'
+            Title.Caption = 'Custo Anterior'
+            Width = 84
+          end
+          item
+            FieldName = 'VLUNIT'
+            Title.Caption = 'Novo Custo'
+            Width = 79
+          end
+          item
+            FieldName = 'MARGEM'
+            Title.Caption = 'Margem Ater.'
+            Width = 79
+          end
+          item
+            FieldName = 'MARGEM_NOVA'
+            Title.Caption = 'Margem Nova'
+            Width = 79
+          end
+          item
+            FieldName = 'VALOR_VENDA'
+            Title.Caption = 'Vlr Antigo'
+            Width = 69
+          end
+          item
+            FieldName = 'VALOR_VENDA_NOVO'
+            Title.Caption = 'Novo Valor'
+            Width = 86
+          end>
+      end
+    end
+  end
+  object UniPanel1: TUniPanel
+    Left = 0
+    Top = 0
+    Width = 770
+    Height = 30
+    Hint = ''
+    Align = alTop
+    ParentFont = False
+    Font.Color = clWhite
+    TabOrder = 1
+    BorderStyle = ubsNone
+    Caption = ''
+    Color = 4079166
+    LayoutConfig.Width = '100'
+    object UniLabel5: TUniLabel
+      AlignWithMargins = True
+      Left = 11
+      Top = 4
+      Width = 443
+      Height = 23
+      Hint = ''
+      Margins.Left = 10
+      Caption = 'Formul'#225'rio para Cadastrar e Vincular Produtos'
+      Align = alTop
+      ParentFont = False
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Style = [fsBold]
+      TabOrder = 1
+      ExplicitTop = 3
+    end
+    object Image1: TUniImage
+      Left = 630
+      Top = 6
+      Width = 21
+      Height = 18
+      Hint = ''
+      Visible = False
+      Picture.Data = {
+        07544269746D617036040000424D360400000000000036000000280000001000
+        0000100000000100200000000000000400000000000000000000000000000000
+        0000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF0000CC000000660000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF0000CC0000009900000099000000660000FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0000CC0000009900000099000000990000009900000066
+        0000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0000CC000000990000009900000099000000990000009900000099
+        000000660000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0000CC000000990000009900000066000000CC0000009900000099
+        00000099000000660000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0000CC00000099000000660000FF00FF00FF00FF0000CC00000099
+        0000009900000099000000660000FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0000CC000000660000FF00FF00FF00FF00FF00FF00FF00FF0000CC
+        000000990000009900000099000000660000FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF0000CC000000990000009900000099000000660000FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0000CC000000990000009900000099000000660000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0000CC0000009900000099000000660000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF0000CC00000099000000660000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF0000CC000000660000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00}
+      Transparent = True
+    end
+    object Image8: TUniImage
+      Left = 657
+      Top = 7
+      Width = 18
+      Height = 17
+      Hint = ''
+      Visible = False
+      Picture.Data = {
+        07544269746D617036040000424D360400000000000036000000280000001000
+        0000100000000100200000000000000400000000000000000000000000000000
+        0000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF000000FF00000099000000990000009900FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF000000FF00000099000000990000009900FF00FF00FF00
+        FF00FF00FF000000FF000000CC000000CC000000CC0000009900FF00FF00FF00
+        FF00FF00FF000000FF000000CC000000CC000000CC0000009900FF00FF00FF00
+        FF00FF00FF00FF00FF000000FF000000CC000000CC000000CC0000009900FF00
+        FF000000FF000000CC000000CC000000CC0000009900FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF000000FF000000CC000000CC000000CC000000
+        99000000CC000000CC000000CC0000009900FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF000000FF000000CC000000CC000000
+        CC000000CC000000CC0000009900FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF000000FF000000CC000000
+        CC000000CC0000009900FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF000000FF000000CC000000CC000000
+        CC000000CC000000CC0000009900FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF000000FF000000CC000000CC000000CC000000
+        99000000CC000000CC000000CC0000009900FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF000000FF000000CC000000CC000000CC0000009900FF00
+        FF000000FF000000CC000000CC000000CC0000009900FF00FF00FF00FF00FF00
+        FF00FF00FF000000FF000000CC000000CC000000CC0000009900FF00FF00FF00
+        FF00FF00FF000000FF000000CC000000CC000000CC0000009900FF00FF00FF00
+        FF00FF00FF000000FF000000FF000000FF000000FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF000000FF000000FF000000FF000000FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00}
+      Transparent = True
+    end
+    object Image9: TUniImage
+      Left = 707
+      Top = 7
+      Width = 19
+      Height = 17
+      Hint = ''
+      Visible = False
+      Picture.Data = {
+        07544269746D617036040000424D360400000000000036000000280000001000
+        0000100000000100200000000000000400000000000000000000000000000000
+        0000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF009933000099330000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF0099330000CC660000CC66000099330000FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0099330000CC660000CC660000CC660000CC6600009933
+        0000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0099330000CC660000CC660000CC660000CC660000CC660000CC66
+        000099330000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0099330000CC660000CC6600009933000099330000CC660000CC66
+        0000CC66000099330000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0099330000CC66000099330000FF00FF00FF00FF0099330000CC66
+        0000CC660000CC66000099330000FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF009933000099330000FF00FF00FF00FF00FF00FF00FF00FF009933
+        0000CC660000CC660000CC66000099330000FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF0099330000CC660000CC660000CC66000099330000FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0099330000CC660000CC660000CC66000099330000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0099330000CC660000CC66000099330000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF0099330000CC66000099330000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF009933000099330000FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00}
+      Transparent = True
+    end
+    object image10: TUniImage
+      Left = 681
+      Top = 6
+      Width = 20
+      Height = 18
+      Hint = ''
+      Visible = False
+      Picture.Data = {
+        07544269746D617036040000424D360400000000000036000000280000001000
+        0000100000000100200000000000000400000000000000000000000000000000
+        0000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF0066CCFF003399CC003399CC003399CC003399CC003399CC003399
+        CC003399CC003399CC003399CC003399CC003399CC0066CCFF00FF00FF00FF00
+        FF0066CCFF003399CC0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FF
+        FF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF003399CC0066CCFF00FF00
+        FF003399CC0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF003399CC000033
+        66003399CC0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF003399CC00FF00
+        FF003399CC0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF00003366000033
+        66000033660000FFFF0000FFFF0000FFFF0000FFFF0000FFFF003399CC00FF00
+        FF003399CC0066CCFF0000FFFF0000FFFF0000FFFF0000FFFF003399CC000033
+        66003399CC0000FFFF0000FFFF0000FFFF0000FFFF0066CCFF003399CC00FF00
+        FF0066CCFF003399CC0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FF
+        FF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF003399CC0066CCFF00FF00
+        FF00FF00FF003399CC0066CCFF0000FFFF0000FFFF0000FFFF0066CCFF000033
+        660066CCFF0000FFFF0000FFFF0000FFFF0066CCFF003399CC00FF00FF00FF00
+        FF00FF00FF0066CCFF003399CC0000FFFF0000FFFF0000FFFF003399CC000033
+        66003399CC0000FFFF0000FFFF0000FFFF003399CC0066CCFF00FF00FF00FF00
+        FF00FF00FF00FF00FF003399CC0066CCFF0000FFFF0000FFFF00336699000033
+        66003366990000FFFF0000FFFF0066CCFF003399CC00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0066CCFF003399CC0000FFFF0000FFFF00003366000033
+        66000033660000FFFF0000FFFF003399CC0066CCFF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF003399CC0066CCFF0000FFFF00003366000033
+        66000033660000FFFF0066CCFF003399CC00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF0066CCFF003399CC0000FFFF003399CC000033
+        66003399CC0000FFFF003399CC0066CCFF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF003399CC0066CCFF0000FFFF0000FF
+        FF0000FFFF0066CCFF003399CC00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF0066CCFF003399CC003399CC003399
+        CC003399CC003399CC0066CCFF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF0066CCFF0066CC
+        FF0066CCFF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00}
+      Transparent = True
+    end
+    object image4: TUniImage
+      Left = 732
+      Top = 6
+      Width = 20
+      Height = 18
+      Hint = ''
+      Visible = False
+      Picture.Data = {
+        07544269746D617036040000424D360400000000000036000000280000001000
+        0000100000000100200000000000000400000000000000000000000000000000
+        0000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF009933000099330000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF009933
+        0000FFFFFF0099330000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF0099330000FFFF
+        FF00FFFFFF0099330000FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00CC996600993300009933000099330000FFFF
+        FF00FFFFFF009933000099330000CC996600FF00FF00FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF0099330000CC996600FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00CC99660099330000FF00FF00FF00FF00FF00
+        FF00FF00FF0099330000FFFFFF00FFFFFF00FFFFFF0099330000993300009933
+        00009933000099330000FFFFFF00FFFFFF00FFFFFF0099330000FF00FF00FF00
+        FF00CC996600CC996600FFFFFF00FFFFFF00FFFFFF00FFFFFF00993300009933
+        000099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00CC996600CC996600FF00
+        FF0099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00993300009933
+        000099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099330000FF00
+        FF0099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00993300009933
+        000099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099330000FF00
+        FF0099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF0099330000993300009933
+        000099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099330000FF00
+        FF0099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099330000FF00
+        FF0099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00CC9966009933
+        0000CC996600FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0099330000FF00
+        FF00CC996600CC996600FFFFFF00FFFFFF00FFFFFF00FFFFFF00993300009933
+        000099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00CC996600CC996600FF00
+        FF00FF00FF0099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00CC9966009933
+        0000CC996600FFFFFF00FFFFFF00FFFFFF00FFFFFF0099330000FF00FF00FF00
+        FF00FF00FF00FF00FF0099330000CC996600FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00CC99660099330000FF00FF00FF00FF00FF00
+        FF00FF00FF00FF00FF00FF00FF00CC9966009933000099330000993300009933
+        0000993300009933000099330000CC996600FF00FF00FF00FF00FF00FF00FF00
+        FF00}
+      Transparent = True
+    end
+  end
+  object dsTES: TDataSource
+    DataSet = UniMainModule.qTES
+    Left = 706
+  end
+  object dsNCM: TDataSource
+    DataSet = UniMainModule.qNCM
+    Left = 626
+  end
+  object dsCEST: TDataSource
+    DataSet = UniMainModule.qCEST
+    Left = 666
+  end
+  object DsEntradaCor: TDataSource
+    DataSet = UniMainModule.qEntradaCor
+    Left = 510
+  end
+end

@@ -1,0 +1,28 @@
+Sistema CoreFiscal com codigo fontes no Delphi 10.4 em Unigui.
+Sistema híbrido, tanto para Navegador ou Celular.
+
+*CoreFiscal*
+*Recursos*
+- MultiEmpresa
+- NFe
+- NFCe
+- MDFe
+- TEF Pay&Go e Sitef
+- SPED
+- Área do Contador
+- Envio de notas para Contabilidade
+- Envio de Danfe via Whatsapp
+- Clientes
+- Produtos 
+- Transportadora
+- Veículos
+- Condutores
+- Tributações
+- Notas de Compras
+- Gerenciamento das Notas emitidas
+- Ordem de Serviço
+- Contas a Pagar
+- Contas a Receber
+- Relatórios completos
+- Controle de empresa
+- e muito mais... entre em contato
